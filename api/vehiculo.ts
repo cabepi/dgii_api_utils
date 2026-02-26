@@ -76,8 +76,12 @@ export default async function handler(
         cedula = req.body?.cedula as string;
         placa = req.body?.placa as string;
     } else {
-        cedula = req.query.cedula as string;
-        placa = req.query.placa as string;
+        // En Vercel a veces req.query viene vacío dependiendo de la config de reescritura, 
+        // así que manualmente parseamos el req.url como fallback.
+        const urlParams = req.url ? new URL(req.url, `http://${req.headers.host}`).searchParams : null;
+
+        cedula = (req.query.cedula as string) || (urlParams?.get('cedula') as string) || '';
+        placa = (req.query.placa as string) || (urlParams?.get('placa') as string) || '';
     }
 
     if (!cedula || !placa) {
