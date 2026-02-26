@@ -1,26 +1,21 @@
 {
-  "name": "dgii_api_utils",
-  "version": "0.1.0",
-  "private": true,
+  "name": "dgii-api-utils",
+  "version": "1.0.0",
+  "description": "Backend API for DGII Consulta Vehiculo",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "tsx server.ts",
+    "vercel-dev": "vercel dev"
   },
   "dependencies": {
-    "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.3"
+    "cheerio": "^1.0.0-rc.12",
+    "express": "^5.2.1"
   },
   "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.3"
+    "@types/express": "^5.0.6",
+    "@types/node": "^20.0.0",
+    "@vercel/node": "^3.0.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.0.0",
+    "vercel": "^33.0.0"
   }
 }
